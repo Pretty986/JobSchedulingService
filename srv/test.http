@@ -1,0 +1,30 @@
+curl -X POST http://localhost:4004/odata/v4/demo/addEmployeeWithMultiplePermissions \
+  -H "Content-Type: application/json" \
+  -d '{
+  "employeeFirstName": "Carol",
+  "employeeLastName": "Williams",
+  "employeeEmail": "carol.williams@example.com",
+  "employeeDepartment": "Sales",
+  "roles": ["USER", "MANAGER", "AUDITOR"]
+}'
+
+### 
+curl -X POST http://localhost:4004/odata/v4/demo/addEmployeeWithPermission \
+  -H "Content-Type: application/json" \
+  -d '{
+  "employeeFirstName": "Bob",
+  "employeeLastName": "Smith",
+  "employeeEmail": "bob.smith@example.com",
+  "employeeDepartment": "IT",
+  "role": "ADMIN"
+}'
+
+###
+curl -X POST http://localhost:4004/odata/v4/demo/Employees \
+  -H "Content-Type: application/json" \
+  -d '{
+  "firstName": "Alice",
+  "lastName": "Johnson",
+  "email": "carol.williams@example.com",
+  "department": "HR"
+}'
